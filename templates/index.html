@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Sentiment Analyzer</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Sentiment Analyzer</h1>
+        <p>Analyze the sentiment of your text or upload a batch file.</p>
+        
+        <!-- Text input form -->
+        <form method="POST" action="/" enctype="multipart/form-data">
+            <textarea name="user_input" rows="5" placeholder="Enter text here..."></textarea>
+            <button type="submit">Analyze</button>
+        </form>
+        
+        <hr>
+        
+        <!-- File upload form -->
+        <form method="POST" action="/batch" enctype="multipart/form-data">
+            <input type="file" name="batch_file" accept=".csv, .txt">
+            <button type="submit">Upload and Analyze</button>
+        </form>
+        
+        <!-- Display Sentiment Result -->
+        {% if sentiment %}
+        <div class="result">
+            <h3>Sentiment Analysis Result:</h3>
+            <p><strong>Sentiment:</strong> {{ sentiment }}</p>
+            <p><strong>Confidence:</strong> {{ confidence }}</p>
+        </div>
+        {% endif %}
+
+        <!-- Display Word Cloud -->
+        {% if wordcloud %}
+        <div class="wordcloud">
+            <h3>Word Cloud:</h3>
+            <img src="{{ url_for('static', filename='wordcloud.png') }}" alt="Word Cloud">
+            <br>
+            <a href="{{ url_for('download_wordcloud') }}" class="download-btn" download>
+                <button type="button">Download Word Cloud</button>
+            </a>
+        </div>
+        {% endif %}
+
+    </div>
+</body>
+</html>

@@ -86,7 +86,7 @@ ollama --version
 5. Open your web browser and visit http://127.0.0.1:5000/ to use the application. 
 
 ```
-##### License
+### License
 This project is licensed under the [Apache License 2.0](LICENSE).  
 Feel free to use, modify, and distribute the code as per the terms of the license.
 

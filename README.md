@@ -2,6 +2,21 @@
 
 AI Sentiment Analyzer is a web-based application built using **Flask** that analyzes the sentiment of a given text input or batch file. It uses AI-powered sentiment analysis to determine whether the sentiment of the input is positive, negative, or neutral. Additionally, it generates a word cloud based on the input text.
 
+
+### Application Interface
+Here’s a screenshot of the application's interface:
+
+![Application UI](media/ui_screenshot.png)
+
+### Word Cloud Example
+Below is an example of the generated word cloud:
+
+![Word Cloud](media/wordcloud_example.png)
+
+### Sentiment Result
+Here is a screenshot of the application's output:
+
+![Output](media/Sentiment_analysis.png).
 ## Features
 - **Text Sentiment Analysis**: Analyze the sentiment of a single text input.
 - **Batch Sentiment Analysis**: Upload a CSV or TXT file containing multiple texts for batch sentiment analysis.
